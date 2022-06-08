@@ -39,7 +39,7 @@ function Home() {
 
     localStorage.getItem("name")
       ? (async () => {
-          const apiKey = "243fcd6cae5e64bc9ca3df1973074968";
+          const apiKey = process.env.REACT_APP_API_KEY
           const url = `https://api.openweathermap.org/data/2.5/weather?lat=${userDetails.latitude}&lon=${userDetails.longitude}&appid=${apiKey}`;
           const response = await axios.get(url);
           const tempreature = response.data.main.temp - 273;
