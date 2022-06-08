@@ -37,7 +37,7 @@ function Home() {
           type: "SET_NAME",
           payload: localStorage.getItem("name"),
         })
-      : console.log("NOT PRESENT");
+      : null;
 
     localStorage.getItem("name")
       ? (async () => {

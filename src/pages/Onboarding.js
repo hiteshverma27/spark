@@ -32,7 +32,6 @@ function Onboarding() {
           className="m-4"
           onClick={(e) => {
             e.preventDefault();
-            console.log(userDetails.userName);
             userDispatch({ type: "SET_NAME", payload: userDetails.userName });
 
             navigate("/home");
