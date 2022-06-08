@@ -32,12 +32,10 @@ function Home() {
           });
         });
 
-    localStorage.getItem("name")
-      ? userDispatch({
+       userDispatch({
           type: "SET_NAME",
           payload: localStorage.getItem("name"),
         })
-      : null;
 
     localStorage.getItem("name")
       ? (async () => {
