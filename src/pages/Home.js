@@ -32,14 +32,14 @@ function Home() {
           });
         });
 
-       userDispatch({
-          type: "SET_NAME",
-          payload: localStorage.getItem("name"),
-        })
+    userDispatch({
+      type: "SET_NAME",
+      payload: localStorage.getItem("name"),
+    });
 
     localStorage.getItem("name")
       ? (async () => {
-          const apiKey = process.env.REACT_APP_API_KEY
+          const apiKey = process.env.REACT_APP_API_KEY;
           const url = `https://api.openweathermap.org/data/2.5/weather?lat=${userDetails.latitude}&lon=${userDetails.longitude}&appid=${apiKey}`;
           const response = await axios.get(url);
           const tempreature = response.data.main.temp - 273;
@@ -141,8 +141,8 @@ function Home() {
               time.slice(6, 9) === "AM"
                 ? "Good Night"
                 : Number(time.slice(0, 2)) > 6
-                ? "Good Evening"
-                : "Good After Noon"
+                ? "Good After Noon"
+                : "Good Evening"
             } ${userDetails.userName}`}</h1>
             <h1 className="text-5xl">
               Your focus for today{" "}
